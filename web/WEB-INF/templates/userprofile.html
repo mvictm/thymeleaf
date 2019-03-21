@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User profile</title>
+</head>
+<body>
+    <div th:object="${session.user}">
+        <p>Name: <span th:text="*{firstName}">Joe</span>.</p>
+        <p>Name: <span th:text="*{lastName}">Hover</span>.</p>
+        <p>Name: <span th:text="*{age}">17</span>.</p>
+    </div>
+
+    <p>
+        <button><a href="home.html" th:href="@{/}">Return to home</a></button>
+    </p>
+</body>
+</html>
