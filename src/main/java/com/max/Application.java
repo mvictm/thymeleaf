@@ -4,6 +4,8 @@ import com.max.controller.HomeController;
 import com.max.controller.MainController;
 import com.max.controller.UserProfileController;
 import lombok.Getter;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -13,8 +15,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by 1 on 21.03.2019.
+ * @author Max
  */
+
+@Slf4j
 public class Application {
     @Getter
     private TemplateEngine templateEngine;
@@ -23,6 +27,7 @@ public class Application {
 
     public Application(ServletContext servletContext) {
         initializeTemplate(servletContext);
+        log.info("Success initialize");
     }
 
     private void initializeTemplate(ServletContext servletContext) {

@@ -14,13 +14,13 @@ import java.io.IOException;
  */
 
 @NoArgsConstructor
-public class UserProfileController implements MainController{
+public class SubscribeController implements MainController {
     public void process(HttpServletRequest request, HttpServletResponse response, ServletContext context, ITemplateEngine engine) {
         WebContext webContext = new WebContext(request, response, context, request.getLocale());
         try {
-            engine.process("userprofile", webContext, response.getWriter());
+            engine.process("subscribe", webContext, response.getWriter());
         } catch (IOException e) {
-            throw new RuntimeException(" Can't use getWriter method " + UserProfileController.class +" "+ e);
+            throw new RuntimeException(" Can't use getWriter method " + SubscribeController.class +" "+ e);
         }
     }
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="welcome">
+    <p>
+        Welcome to random page!
+    </p>
+</div>
+<div class="game_board">
+    <p>
+        Now we return for you random message
+    </p>
+    <p th:class="${(Math.random() > 0.5)}? '*{random.messageOne}' : '*{random.messageTwo}'">
+        Default message
+    </p>
+</div>
+</body>
+</html>

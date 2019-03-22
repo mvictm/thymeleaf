@@ -2,6 +2,8 @@ package com.max.repository;
 
 import com.max.entity.Comment;
 import com.max.entity.Product;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -10,19 +12,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by 1 on 19.03.2019.
+ * @author Max
  */
 
-
+@Slf4j
 public class ProductRepository {
+    @Getter(lazy = true)
     private static final ProductRepository INSTANCE = new ProductRepository();
     private final Map<Integer, Product> productsById;
-
-
-    public static ProductRepository getInstance() {
-        return INSTANCE;
-    }
-
 
     private ProductRepository() {
 
@@ -124,7 +121,7 @@ public class ProductRepository {
         prod30.getCommentList().add(new Comment(20, "Taste is OK, but I agree with previous comment that bars are too hard to eat"));
         prod30.getCommentList().add(new Comment(21, "Would definitely NOT buy again. Simply unedible!"));
 
-
+        log.info("Fill up product repository");
     }
 
 

@@ -1,6 +1,7 @@
 package com.max.controller;
 
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.context.WebContext;
 
@@ -11,7 +12,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 /**
- * Created by 1 on 21.03.2019.
+ * @author Max
  */
 
 @NoArgsConstructor
@@ -29,8 +30,7 @@ public class HomeController implements MainController {
         try {
             engine.process("home", ctx, response.getWriter());
         } catch (IOException e) {
-            //TODO add logger
-            e.printStackTrace();
+            throw new RuntimeException(" Can't use getWriter method " + HomeController.class +" "+ e);
         }
     }
 }

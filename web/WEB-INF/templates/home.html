@@ -5,7 +5,26 @@
     <title>Virtual Grocery</title>
 </head>
 <body>
+<div class="welcome">
     <p th:utext="#{welcome.message(${session.user.name})}">Welcome to my store!</p>
     <p>Today is: <span th:text="${#calendars.format(today, 'dd MMMM yyyy')}">21.03.2019</span></p>
+</div>
+<div class="navigation">
+    <p>
+        Select option
+    </p>
+    <ol>
+        <li>
+            <a href="product.html" th:href="@{/product}">
+                Product list
+            </a>
+        </li>
+        <li>
+            <a href="order.html" th:href="@{/order}">
+                Oreder list
+            </a>
+        </li>
+    </ol>
+</div>
 </body>
 </html>
