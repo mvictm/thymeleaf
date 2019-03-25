@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <script src="js/settings.js"></script>
+</head>
+<body>
+<div class="register">
+    <form action="#" name="UserRegistration" onsubmit="return(validate());">
+        <table cellpadding="2" align="center">
+            <tr>
+                <td>
+                    <b>Registration Form</b>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    <input type="text" name="names" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Postel Address
+                </td>
+                <td>
+                    <input type="text" name="address" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    City
+                </td>
+                <td>
+                    <select name="city">
+                        <option value="-1">Select...</option>
+                        <option value="msk">Moscow</option>
+                        <option value="spb">Saint-Petersburg</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" name="email" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit Form">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

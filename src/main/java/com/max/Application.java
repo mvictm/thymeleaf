@@ -11,6 +11,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,4 +57,21 @@ public class Application {
     }
 
 
+    public MainController resolveControllerForRequest(HttpServletRequest servletRequest) {
+        return controllerMapByURL.get(getRequestPath(servletRequest));
+    }
+
+    private String getRequestPath(HttpServletRequest servletRequest) {
+        String request = servletRequest.getRequestURI();
+        int index = request.indexOf(';');
+        if (index != -1) {
+            request = request.substring(0, index);
+        }
+
+        String context = servletRequest.getContextPath();
+        if (request.startsWith(context)) {
+            return request.substring(context.length());
+        }
+        return request;
+    }
 }
