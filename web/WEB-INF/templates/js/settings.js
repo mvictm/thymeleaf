@@ -28,3 +28,10 @@ function validate() {
     }
     return true;
 }
+
+function check(form) {
+    if (form.username.value === "" || form.password.value === "") {
+        alert("Your data are empy!");
+        return false;
+    }
+}
